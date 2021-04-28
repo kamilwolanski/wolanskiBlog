@@ -3,7 +3,8 @@ import { DocumentNode, gql } from '@apollo/client';
 export class Queries {
   public query1: DocumentNode;
   public queryFiltered: DocumentNode;
-  constructor(postsOnPage: number, skipNumber: number, searchValue: string) {
+  public meta: DocumentNode;
+  constructor(postsOnPage?: number, skipNumber?: number, searchValue?: string) {
     this.query1 = gql`
     {
       allPosts(first: ${postsOnPage}, skip: ${skipNumber}) {
@@ -69,5 +70,18 @@ export class Queries {
       }
     }
   `;
+
+    this.meta = gql`
+      {
+        allPosts(first: 2) {
+          title
+          _seoMetaTags {
+            tag
+            attributes
+            content
+          }
+        }
+      }
+    `;
   }
 }

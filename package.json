@@ -20,10 +20,12 @@
     "eslint": "^7.23.0",
     "graphql": "^15.5.0",
     "gsap": "^3.6.1",
+    "html-tag": "^2.0.0",
     "interweave": "^12.7.1",
     "react": "^17.0.2",
     "react-datocms": "^1.6.0",
     "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
@@ -57,8 +59,10 @@
     ]
   },
   "devDependencies": {
+    "@types/react-helmet": "^6.1.1",
     "@types/react-router-dom": "^5.1.7",
     "@types/styled-components": "^5.1.9",
+    "datocms-client": "^3.4.5",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "prettier": "^2.2.1"

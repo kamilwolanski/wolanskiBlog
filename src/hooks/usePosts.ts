@@ -5,6 +5,7 @@ import { PostsResponseI } from '../providers/PostsProviders';
 import { useCallback } from 'react';
 import { Queries } from '../Queries/basicQuery';
 import { usePagination } from './usePagination';
+import useMeta from './useMeta';
 
 export const usePosts = (postsOnPage: number, searchValue: string) => {
   let location = useLocation();
@@ -12,12 +13,12 @@ export const usePosts = (postsOnPage: number, searchValue: string) => {
   const setInitialCurrentBtn = useCallback(() => {
     const lastChar = location.pathname.substr(location.pathname.length - 1);
     if (location.pathname !== `/posts` && !isNaN(Number(lastChar))) {
-      console.log('przeszło');
-      console.log(lastChar);
-      console.log(isNaN(Number(lastChar)));
+      // console.log('przeszło');
+      // console.log(lastChar);
+      // console.log(isNaN(Number(lastChar)));
       return Number(lastChar);
     } else {
-      console.log('ustawia na 1');
+      // console.log('ustawia na 1');
       return 1;
     }
   }, [location.pathname]);
@@ -35,13 +36,18 @@ export const usePosts = (postsOnPage: number, searchValue: string) => {
     currentBtn,
     setCurrentBtn
   );
-
+  const { data } = useMeta();
+  useEffect(() => {
+    if (data) {
+      console.log(data.allPosts[0]._seoMetaTags);
+    }
+  }, [data]);
   useEffect(() => {
     setSkipNumber((currentBtn - 1) * postsOnPage);
   }, [currentBtn, postsOnPage]);
 
   useEffect(() => {
-    console.log(history.location.pathname);
+    // console.log(history.location.pathname);
     if (!history.location.pathname.includes('posts/post')) {
       history.push(currentBtn > 1 ? `/posts/${currentBtn}` : '/posts');
     }

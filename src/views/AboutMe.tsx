@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { AboutMeWrapper } from './AboutMe.styles';
 import Main from '../components/organisms/Main/Main';
 import { NavContext } from '../providers/NavProvider';
+import { Helmet } from 'react-helmet';
 
 const AboutMe: React.FC = () => {
   const { isOpen } = useContext(NavContext);
@@ -9,6 +10,12 @@ const AboutMe: React.FC = () => {
   return (
     <>
       <Main blur={isOpen ? true : false}>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>To jest podstrona o mnie</title>
+          <link rel="canonical" href="http://mysite.com/example" />
+          <meta name="description" content="Kamil wolanski coś tam coś tam" />
+        </Helmet>
         <AboutMeWrapper>
           <h2>Więcej o mnie</h2>
           <p>
