@@ -17,7 +17,7 @@ export const useSinglePost = (title: string) => {
               id
               image {
                 id
-                responsiveImage(imgixParams: { fit: max, auto: format}) {
+                responsiveImage(imgixParams: {fit: crop, auto: format}) {
                   srcSet
                   webpSrcSet
                   sizes

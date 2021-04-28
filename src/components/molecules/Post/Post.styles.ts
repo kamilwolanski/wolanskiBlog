@@ -112,12 +112,6 @@ export const ContentWrapper = styled.div<StyledTypes>`
     text-decoration: underline;
   }
 
-  img {
-    /* height: fit-content !important;
-    width: fit-content !important; */
-    object-fit: contain !important;
-  }
-
   @media (max-width: 550px) {
     padding: 20px 20px;
   }
