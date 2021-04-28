@@ -47,9 +47,9 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
           <Route path="/about-me">
             <AboutMe />
           </Route>
-          {/* <Route>
+          <Route>
             <Redirect to="/posts" />
-          </Route> */}
+          </Route>
         </Switch>
         <Footer blur={isOpen ? true : false}>
           <p>2021 WolanskiBlog - Wszelkie prawa zastrzeżone</p>
