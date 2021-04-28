@@ -11,9 +11,9 @@ const AboutMe: React.FC = () => {
     <>
       <Main blur={isOpen ? true : false}>
         <Helmet>
-          <meta charSet="utf-8" />
+          {/* <meta charSet="utf-8" /> */}
           <title>To jest podstrona o mnie</title>
-          <link rel="canonical" href="http://mysite.com/example" />
+          {/* <link rel="canonical" href="http://mysite.com/example" /> */}
           <meta name="description" content="Kamil wolanski coś tam coś tam" />
         </Helmet>
         <AboutMeWrapper>
