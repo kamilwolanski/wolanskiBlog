@@ -9,9 +9,9 @@ const COMMENTS_ID = 'graphcomment';
 const FullPost: React.FC = () => {
   const history = useHistory();
   let paramId: { id: string } = useParams();
-  // console.log(paramId.id);
-  const { post, loading } = useSinglePost(paramId.id.split('-').join(' '));
-  console.log('zaladowal sie full post')
+  console.log(paramId.id);
+  const { post, loading } = useSinglePost(paramId.id);
+  console.log('zaladowal sie full post');
   useEffect(() => {
     window.gc_params = {
       graphcomment_id: 'wolanskiblog',
@@ -37,7 +37,7 @@ const FullPost: React.FC = () => {
   //   }
   // }, [history, loading, post?.allPosts?.length]);
 
-  paramId.id = paramId.id.split('-').join(' ');
+  // paramId.id = paramId.id.split('-').join(' ');
 
   return (
     <Wrapper>

@@ -12,6 +12,7 @@ export type PostType = {
   image: { url: string };
   content: any;
   _createdAt: string;
+  slug: string;
   _seoMetaTags: SeoMetaTagType[];
 };
 

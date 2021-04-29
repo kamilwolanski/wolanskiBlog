@@ -2,10 +2,10 @@ import { useQuery, gql } from '@apollo/client';
 
 import { PostsResponseI } from '../providers/PostsProviders';
 
-export const useSinglePost = (title: string) => {
+export const useSinglePost = (slug: string) => {
   const query = gql`
     {
-      allPosts(filter: { title: { in: ["${title}"] } }) {
+      allPosts(filter: { slug: { in: ["${slug}"] } }) {
         id
         title
         _seoMetaTags {tag, attributes, content}

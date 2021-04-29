@@ -23,13 +23,14 @@ type PostAdditionalType = {
   isFull?: boolean;
 };
 
-const Post: React.FC<PostType & PostAdditionalType> = ({ id, title, image, _createdAt, content, _seoMetaTags, isFull = false }) => {
+const Post: React.FC<PostType & PostAdditionalType> = ({ id, title, image, _createdAt, content, slug, _seoMetaTags, isFull = false }) => {
   const date = new Date(_createdAt);
   const {
     dateInPolish: { day, month, year },
   } = useDate(date);
 
   useEffect(() => {
+    console.log(isFull);
     console.log(_seoMetaTags);
   }, [_seoMetaTags]);
   const wrapper = useRef<any>(null);
@@ -99,7 +100,7 @@ const Post: React.FC<PostType & PostAdditionalType> = ({ id, title, image, _crea
         {!isFull && (
           <Link
             to={{
-              pathname: `/posts/post/${title.split(' ').join('-')}`,
+              pathname: `/posts/post/${slug}`,
             }}
           >
             <Button>

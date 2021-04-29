@@ -10,6 +10,7 @@ export class Queries {
       allPosts(first: ${postsOnPage}, skip: ${skipNumber}) {
         id
         title
+        slug
         content {
           value
           blocks {
@@ -35,6 +36,7 @@ export class Queries {
       allPosts(first: ${postsOnPage}, skip: ${skipNumber}, filter: { title: { matches: { pattern: "${searchValue}" } } }) {
         id
         title
+        slug
         content {
           value
           blocks {
