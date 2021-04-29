@@ -7,7 +7,7 @@ export class Queries {
   constructor(postsOnPage?: number, skipNumber?: number, searchValue?: string) {
     this.query1 = gql`
     {
-      allPosts(first: ${postsOnPage}, skip: ${skipNumber}) {
+      allPosts(orderBy: [createdAt_DESC], first: ${postsOnPage}, skip: ${skipNumber}) {
         id
         title
         slug
