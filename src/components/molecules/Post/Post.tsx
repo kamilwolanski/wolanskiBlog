@@ -11,6 +11,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { isHeading } from 'datocms-structured-text-utils';
 import Interweave from 'interweave';
+import { renderMetaTags } from 'react-datocms';
+import { Helmet } from 'react-helmet';
 
 function truncate(str: any, n: number) {
   // console.log(str);
@@ -21,15 +23,15 @@ type PostAdditionalType = {
   isFull?: boolean;
 };
 
-const Post: React.FC<PostType & PostAdditionalType> = ({ id, title, image, _createdAt, content, isFull = false }) => {
+const Post: React.FC<PostType & PostAdditionalType> = ({ id, title, image, _createdAt, content, _seoMetaTags, isFull = false }) => {
   const date = new Date(_createdAt);
   const {
     dateInPolish: { day, month, year },
   } = useDate(date);
 
   useEffect(() => {
-    // console.log(content);
-  }, [content]);
+    console.log(_seoMetaTags);
+  }, [_seoMetaTags]);
   const wrapper = useRef<any>(null);
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -67,6 +69,7 @@ const Post: React.FC<PostType & PostAdditionalType> = ({ id, title, image, _crea
 
   return (
     <Wrapper ref={wrapper}>
+      {isFull && <Helmet>{renderMetaTags(_seoMetaTags)}</Helmet>}
       <ImageWrapper>
         <img src={image.url} alt="" />
       </ImageWrapper>

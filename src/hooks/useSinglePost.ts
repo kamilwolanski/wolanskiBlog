@@ -8,6 +8,7 @@ export const useSinglePost = (title: string) => {
       allPosts(filter: { title: { in: ["${title}"] } }) {
         id
         title
+        _seoMetaTags {tag, attributes, content}
         content {
           value
           blocks {

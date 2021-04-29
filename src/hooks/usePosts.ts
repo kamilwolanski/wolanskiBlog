@@ -39,7 +39,7 @@ export const usePosts = (postsOnPage: number, searchValue: string) => {
   const { data } = useMeta();
   useEffect(() => {
     if (data) {
-      console.log(data.allPosts[0]._seoMetaTags);
+      console.log(data.allPosts);
     }
   }, [data]);
   useEffect(() => {

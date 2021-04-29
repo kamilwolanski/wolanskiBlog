@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { usePosts } from '../hooks/usePosts';
 import { useDebounce } from '../hooks/useDebounce';
 import { StructuredText } from 'datocms-structured-text-utils';
-import { StructuredTextDocument } from 'react-datocms';
+import { SeoMetaTagType, StructuredTextDocument } from 'react-datocms';
 
 const articlesOnAPage = 3;
 
@@ -12,6 +12,7 @@ export type PostType = {
   image: { url: string };
   content: any;
   _createdAt: string;
+  _seoMetaTags: SeoMetaTagType[];
 };
 
 export interface PostsResponseI {
