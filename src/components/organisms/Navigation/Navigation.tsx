@@ -34,7 +34,7 @@ const Navigation = () => {
   return (
     <Nav ref={navRef} id="confirm">
       <IconsContainer />
-      <Link to="/posts" onClick={() => setIsOpen(false)}>
+      <Link to="/" onClick={() => setIsOpen(false)}>
         <Logo />
       </Link>
       <HamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />

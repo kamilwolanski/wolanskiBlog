@@ -30,12 +30,12 @@ const FullPost: React.FC = () => {
     };
   }, [paramId]);
 
-  // useEffect(() => {
-  //   if (!post?.allPosts?.length && !loading) {
-  //     console.log('replcae')
-  //     history.replace('');
-  //   }
-  // }, [history, loading, post?.allPosts?.length]);
+  useEffect(() => {
+    if (!post?.allPosts?.length && !loading) {
+      console.log('replcae')
+      history.replace('');
+    }
+  }, [history, loading, post?.allPosts?.length]);
 
   return (
     <Wrapper>

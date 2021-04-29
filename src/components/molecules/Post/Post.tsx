@@ -100,7 +100,7 @@ const Post: React.FC<PostType & PostAdditionalType> = ({ id, title, image, _crea
         {!isFull && (
           <Link
             to={{
-              pathname: `/posts/post/${slug}`,
+              pathname: `/post/${slug}`,
             }}
           >
             <Button>

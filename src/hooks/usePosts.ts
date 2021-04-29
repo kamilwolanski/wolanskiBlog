@@ -12,7 +12,7 @@ export const usePosts = (postsOnPage: number, searchValue: string) => {
   let history = useHistory();
   const setInitialCurrentBtn = useCallback(() => {
     const lastChar = location.pathname.substr(location.pathname.length - 1);
-    if (location.pathname !== `/posts` && !isNaN(Number(lastChar))) {
+    if (location.pathname !== `/` && !isNaN(Number(lastChar))) {
       console.log('przeszło');
       // console.log(lastChar);
       // console.log(isNaN(Number(lastChar)));
@@ -48,13 +48,13 @@ export const usePosts = (postsOnPage: number, searchValue: string) => {
 
   useEffect(() => {
     // console.log(history.location.pathname);
-    if (!history.location.pathname.includes('posts/post') && history.location.pathname.includes('posts')) {
-      history.push(currentBtn > 1 ? `/posts/${currentBtn}` : '/posts');
+    if (!history.location.pathname.includes('/post') && history.location.pathname.includes('/')) {
+      history.push(currentBtn > 1 ? `/${currentBtn}` : '/');
     }
   }, [currentBtn]);
 
   useEffect(() => {
-    if (location.pathname.includes(`/posts/`) || location.pathname === `/posts`) {
+    if (location.pathname === `/`) {
       setCurrentBtn(setInitialCurrentBtn());
     }
   }, [numberOfPages.length, location.pathname, setInitialCurrentBtn]);

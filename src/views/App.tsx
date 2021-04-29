@@ -23,15 +23,15 @@ const App = () => {
             <NavProvider>
               <MainTemplate>
                 <Switch>
-                  <Route path="/posts/post/:id">
+                  <Route path="/post/:id">
                     <FullPost />
                   </Route>
-                  <Route path="/posts">
+                  <Route path="/">
                     <Posts />
                   </Route>
-                  <Route path="/">
+                  {/* <Route path="/">
                     <Redirect to="/posts" />
-                  </Route>
+                  </Route> */}
                 </Switch>
               </MainTemplate>
             </NavProvider>
