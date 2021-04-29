@@ -49,12 +49,13 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
                   <HeroSection />
                 </Route>
                 <Main blur={isOpen ? true : false}>
-                  <Route exact path="/">
-                    <Search />
-                  </Route>
                   <Route exact path="/:page">
                     <Search />
                   </Route>
+                  <Route exact path="/">
+                    <Search />
+                  </Route>
+
                   {children}
                   <Aside />
                 </Main>
