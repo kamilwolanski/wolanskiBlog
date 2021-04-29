@@ -5,7 +5,7 @@ import { PostType } from '../../../providers/PostsProviders';
 import { RecentPostWrapper } from './RecentPost.styles';
 import { BiTimeFive } from 'react-icons/bi';
 
-const RecentPost: React.FC<PostType> = ({ title, _createdAt }) => {
+const RecentPost: React.FC<PostType> = ({ title, _createdAt, slug }) => {
   const date = new Date(_createdAt);
   const {
     dateInPolish: { day, month, year },
@@ -13,7 +13,7 @@ const RecentPost: React.FC<PostType> = ({ title, _createdAt }) => {
   return (
     <Link
       to={{
-        pathname: `/posts/post/${title.split(' ').join('-')}`,
+        pathname: `/posts/post/${slug}`,
       }}
     >
       <RecentPostWrapper>

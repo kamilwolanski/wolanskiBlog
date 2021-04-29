@@ -37,8 +37,6 @@ const FullPost: React.FC = () => {
   //   }
   // }, [history, loading, post?.allPosts?.length]);
 
-  // paramId.id = paramId.id.split('-').join(' ');
-
   return (
     <Wrapper>
       {post?.allPosts?.length && !loading && <Post key={post.allPosts[0]?.id} {...post?.allPosts[0]} isFull={true} />}

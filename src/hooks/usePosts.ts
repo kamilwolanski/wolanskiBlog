@@ -49,7 +49,7 @@ export const usePosts = (postsOnPage: number, searchValue: string) => {
   useEffect(() => {
     // console.log(history.location.pathname);
     if (!history.location.pathname.includes('posts/post') && history.location.pathname.includes('posts')) {
-      history.push(currentBtn >= 1 ? `/posts/${currentBtn}` : history.location.pathname);
+      history.push(currentBtn > 1 ? `/posts/${currentBtn}` : '/posts');
     }
   }, [currentBtn]);
 

@@ -8,6 +8,7 @@ export const useFirstPosts = (numberOfPosts: number) => {
       allPosts(first: "${numberOfPosts}") {
         id
         title
+        slug
         _createdAt
       }
     }
