@@ -90,7 +90,7 @@ export class Queries {
     this.favicon = gql`
       {
         _site {
-          faviconMetaTags {
+          faviconMetaTags(variants: [icon, appleTouchIcon, msApplication]) {
             attributes
             content
             tag
