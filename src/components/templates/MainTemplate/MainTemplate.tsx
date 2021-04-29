@@ -62,9 +62,9 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
             </Switch>
           </Route>
 
-          <Route>
+          {/* <Route>
             <Redirect to="/" />
-          </Route>
+          </Route> */}
         </Switch>
         <Footer blur={isOpen ? true : false}>
           <p>2021 WolanskiBlog - Wszelkie prawa zastrzeżone</p>
