@@ -13,7 +13,7 @@ const RecentPost: React.FC<PostType> = ({ title, _createdAt, slug }) => {
   return (
     <Link
       to={{
-        pathname: `/post/${slug}`,
+        pathname: `/posts/post/${slug}`,
       }}
     >
       <RecentPostWrapper>

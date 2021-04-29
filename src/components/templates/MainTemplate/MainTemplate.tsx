@@ -33,39 +33,37 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
         <Navigation />
         {isOpen && <div className="overlay" style={{ width: '100%', height: '100vh', position: 'fixed', left: '0', top: '0', zIndex: 1 }}></div>}
         <Switch>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/about-me">
-            <AboutMe />
-          </Route>
-          <Route path="/">
+          <Route path="/posts">
             <Switch>
-              <Route path="/">
-                <Route exact path="/">
+              <Route path="/posts">
+                <Route exact path="/posts">
                   <HeroSection />
                 </Route>
-                <Route exact path="/:page">
+                <Route exact path="/posts/:page">
                   <HeroSection />
                 </Route>
                 <Main blur={isOpen ? true : false}>
-                  <Route exact path="/:page">
+                  <Route exact path="/posts">
                     <Search />
                   </Route>
-                  <Route exact path="/">
+                  <Route exact path="/posts/:page">
                     <Search />
                   </Route>
-
                   {children}
                   <Aside />
                 </Main>
               </Route>
             </Switch>
           </Route>
-
-          {/* <Route>
-            <Redirect to="/" />
-          </Route> */}
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="/about-me">
+            <AboutMe />
+          </Route>
+          <Route>
+            <Redirect to="/posts" />
+          </Route>
         </Switch>
         <Footer blur={isOpen ? true : false}>
           <p>2021 WolanskiBlog - Wszelkie prawa zastrzeżone</p>

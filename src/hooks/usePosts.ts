@@ -12,7 +12,7 @@ export const usePosts = (postsOnPage: number, searchValue: string) => {
   let history = useHistory();
   const setInitialCurrentBtn = useCallback(() => {
     const lastChar = location.pathname.substr(location.pathname.length - 1);
-    if (location.pathname !== `/` && !isNaN(Number(lastChar))) {
+    if (location.pathname !== `/posts` && !isNaN(Number(lastChar))) {
       console.log('przeszło');
       // console.log(lastChar);
       // console.log(isNaN(Number(lastChar)));
@@ -26,7 +26,7 @@ export const usePosts = (postsOnPage: number, searchValue: string) => {
   const [numberOfPages, setNumberOfPages] = useState<(string | number)[]>([]);
   const queries = new Queries(postsOnPage, skipNumber, searchValue);
   const { loading, error, data: posts } = useQuery<PostsResponseI>(searchValue ? queries.queryFiltered : queries.query1);
-  const [currentBtn, setCurrentBtn] = useState<number>(1);
+  const [currentBtn, setCurrentBtn] = useState<number>(setInitialCurrentBtn());
   const { handleCurrentBtn, setBtnByOne, arrOfCurrButtons } = usePagination(
     posts,
     loading,
@@ -48,13 +48,13 @@ export const usePosts = (postsOnPage: number, searchValue: string) => {
 
   useEffect(() => {
     // console.log(history.location.pathname);
-    if (!history.location.pathname.includes('/post')) {
-      history.push(currentBtn > 1 ? `/${currentBtn}` : history.location.pathname);
+    if (!history.location.pathname.includes('posts/post') && history.location.pathname.includes('posts')) {
+      history.push(currentBtn > 1 ? `/posts/${currentBtn}` : '/posts');
     }
   }, [currentBtn]);
 
   useEffect(() => {
-    if (location.pathname === `/`) {
+    if (location.pathname.includes(`/posts/`) || location.pathname === `/posts`) {
       setCurrentBtn(setInitialCurrentBtn());
     }
   }, [numberOfPages.length, location.pathname, setInitialCurrentBtn]);
