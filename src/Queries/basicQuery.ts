@@ -91,8 +91,9 @@ export class Queries {
       {
         _site {
           faviconMetaTags {
-            tag
             attributes
+            content
+            tag
           }
         }
       }
