@@ -33,12 +33,6 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
         <Navigation />
         {isOpen && <div className="overlay" style={{ width: '100%', height: '100vh', position: 'fixed', left: '0', top: '0', zIndex: 1 }}></div>}
         <Switch>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/about-me">
-            <AboutMe />
-          </Route>
           <Route path="/">
             <Switch>
               <Route path="/">
@@ -61,7 +55,12 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
               </Route>
             </Switch>
           </Route>
-
+          <Route exact path="/contact">
+            <Contact />
+          </Route>
+          <Route exact path="/about-me">
+            <AboutMe />
+          </Route>
           <Route>
             <Redirect to="/" />
           </Route>
