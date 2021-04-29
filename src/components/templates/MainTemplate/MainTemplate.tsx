@@ -1,4 +1,4 @@
-import React, { ReactNode, useContext } from 'react';
+import React, { ReactNode, useContext, useEffect } from 'react';
 import { Wrapper, Footer } from './MainTemplate.styles';
 import Navigation from '../../organisms/Navigation/Navigation';
 import HeroSection from '../../molecules/HeroSection/HeroSection';
@@ -10,11 +10,25 @@ import AboutMe from '../../../views/AboutMe';
 import Main from '../../organisms/Main/Main';
 import Search from '../../molecules/Search/Search';
 import WindowWidthProvider from '../../../providers/WindowWidthProvider';
+import { Queries } from '../../../Queries/basicQuery';
+import { renderMetaTags } from 'react-datocms';
+import { Helmet } from 'react-helmet';
+import { useQuery } from '@apollo/client';
 
 const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
   const { isOpen } = useContext(NavContext);
+  const queries = new Queries();
+  const { data } = useQuery(queries.favicon);
+  useEffect(() => {
+    if (data) {
+      console.log(data._site.faviconMetaTags);
+    }
+  }, [data]);
+
   return (
     <WindowWidthProvider>
+      {data && <Helmet>{renderMetaTags(data._site.faviconMetaTags)}</Helmet>}
+
       <Wrapper className="xxx">
         <Navigation />
         {isOpen && <div className="overlay" style={{ width: '100%', height: '100vh', position: 'fixed', left: '0', top: '0', zIndex: 1 }}></div>}
@@ -32,9 +46,9 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
                   <Route exact path="/posts">
                     <Search />
                   </Route>
-                  <Route exact path="/posts/:page">
+                  {/* <Route exact path="/posts/:page">
                     <Search />
-                  </Route>
+                  </Route> */}
                   {children}
                   <Aside />
                 </Main>
