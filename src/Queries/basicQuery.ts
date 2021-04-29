@@ -4,7 +4,7 @@ export class Queries {
   public query1: DocumentNode;
   public queryFiltered: DocumentNode;
   public meta: DocumentNode;
-  public favicon: DocumentNode;
+  // public favicon: DocumentNode;
   constructor(postsOnPage?: number, skipNumber?: number, searchValue?: string) {
     this.query1 = gql`
     {
@@ -87,16 +87,16 @@ export class Queries {
       }
     `;
 
-    this.favicon = gql`
-      {
-        _site {
-          faviconMetaTags(variants: [icon, appleTouchIcon, msApplication]) {
-            attributes
-            content
-            tag
-          }
-        }
-      }
-    `;
+    // this.favicon = gql`
+    //   {
+    //     _site {
+    //       faviconMetaTags(variants: [icon, appleTouchIcon, msApplication]) {
+    //         attributes
+    //         content
+    //         tag
+    //       }
+    //     }
+    //   }
+    // `;
   }
 }

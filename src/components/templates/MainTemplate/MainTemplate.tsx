@@ -18,16 +18,16 @@ import { useQuery } from '@apollo/client';
 const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
   const { isOpen } = useContext(NavContext);
   const queries = new Queries();
-  const { data } = useQuery(queries.favicon);
-  useEffect(() => {
-    if (data) {
-      console.log(data._site.faviconMetaTags);
-    }
-  }, [data]);
+  // const { data } = useQuery(queries.favicon);
+  // useEffect(() => {
+  //   if (data) {
+  //     console.log(data._site.faviconMetaTags);
+  //   }
+  // }, [data]);
 
   return (
     <WindowWidthProvider>
-      {data && <Helmet>{renderMetaTags(data._site.faviconMetaTags)}</Helmet>}
+      {/* {data && <Helmet>{renderMetaTags(data._site.faviconMetaTags)}</Helmet>} */}
 
       <Wrapper className="xxx">
         <Navigation />
