@@ -17,13 +17,16 @@ const FullPost: React.FC = () => {
       graphcomment_id: 'wolanskiblog',
       fixed_header_height: 0,
     };
-    console.log('graphComment')
+    console.log('graphComment');
     const script = document.createElement('script');
     script.src = 'https://graphcomment.com/js/integration.js?' + Date.now();
     script.async = true;
 
     const comments = document.getElementById(COMMENTS_ID);
-    if (comments) comments.appendChild(script);
+    if (comments) {
+      console.log('comments są');
+      comments.appendChild(script);
+    }
     return () => {
       const comments = document.getElementById(COMMENTS_ID);
       if (comments) comments.innerHTML = '';
@@ -32,7 +35,7 @@ const FullPost: React.FC = () => {
 
   useEffect(() => {
     if (!post?.allPosts?.length && !loading) {
-      console.log('replcae')
+      console.log('replcae');
       history.replace('');
     }
   }, [history, loading, post?.allPosts?.length]);
