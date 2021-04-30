@@ -29,10 +29,6 @@ const FullPost: React.FC = () => {
     } else {
       console.log('commentów nie ma');
     }
-    return () => {
-      const comments = document.getElementById(COMMENTS_ID);
-      if (comments) comments.innerHTML = '';
-    };
   }, [paramId]);
 
   useEffect(() => {
