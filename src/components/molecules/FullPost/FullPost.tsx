@@ -17,7 +17,7 @@ const FullPost: React.FC = () => {
       graphcomment_id: 'wolanskiblog',
       fixed_header_height: 0,
     };
-
+    console.log('graphComment')
     const script = document.createElement('script');
     script.src = 'https://graphcomment.com/js/integration.js?' + Date.now();
     script.async = true;
