@@ -41,12 +41,12 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
                 <Main blur={isOpen ? true : false}>
                   <Route exact path="/posts">
                     <Search />
+                    {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null}
                   </Route>
                   <Route exact path="/posts/:page">
                     <Search />
                   </Route>
                   {children}
-                  {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null}
                   <Aside />
                 </Main>
               </Route>
