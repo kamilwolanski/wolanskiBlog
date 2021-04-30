@@ -12,6 +12,7 @@ const FullPost: React.FC = () => {
   console.log(paramId.id);
   const { post, loading } = useSinglePost(paramId.id);
   console.log('zaladowal sie full post');
+
   useEffect(() => {
     window.gc_params = {
       graphcomment_id: 'wolanskiblog',
@@ -29,7 +30,11 @@ const FullPost: React.FC = () => {
     } else {
       console.log('commentów nie ma');
     }
-  }, [paramId]);
+    return () => {
+      const comments = document.getElementById(COMMENTS_ID);
+      if (comments) comments.innerHTML = '';
+    };
+  }, [paramId, history]);
 
   useEffect(() => {
     if (!post?.allPosts?.length && !loading) {
