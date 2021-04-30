@@ -23,9 +23,20 @@ function truncate(str: any, n: number) {
 
 type PostAdditionalType = {
   isFull?: boolean;
+  loading?: boolean;
 };
 
-const Post: React.FC<PostType & PostAdditionalType> = ({ id, title, image, _createdAt, content, slug, _seoMetaTags, isFull = false }) => {
+const Post: React.FC<PostType & PostAdditionalType> = ({
+  id,
+  title,
+  image,
+  _createdAt,
+  content,
+  slug,
+  _seoMetaTags,
+  isFull = false,
+  loading = false,
+}) => {
   const { windowWidth } = useContext(WindowWidthContext);
   const date = new Date(_createdAt);
   const {

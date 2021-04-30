@@ -19,20 +19,7 @@ const FullPost: React.FC = () => {
 
   return (
     <Wrapper>
-      {loading && (
-        <div
-          className="loaderWrapper"
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100vh',
-          }}
-        >
-          <ClipLoader loading={loading} size={150} />
-        </div>
-      )}
-      {post?.allPosts?.length && !loading && <Post key={post.allPosts[0]?.id} {...post?.allPosts[0]} isFull={true} />}
+      {post?.allPosts?.length && !loading && <Post key={post.allPosts[0]?.id} {...post?.allPosts[0]} isFull={true} loading={loading} />}
     </Wrapper>
   );
 };
