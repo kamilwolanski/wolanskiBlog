@@ -26,6 +26,8 @@ const FullPost: React.FC = () => {
     if (comments) {
       console.log('comments są');
       comments.appendChild(script);
+    } else {
+      console.log('commentów nie ma');
     }
     return () => {
       const comments = document.getElementById(COMMENTS_ID);
