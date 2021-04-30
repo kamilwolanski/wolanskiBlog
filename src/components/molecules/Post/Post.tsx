@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { PostType } from '../../../providers/PostsProviders';
 import { Wrapper, ImageWrapper, ContentWrapper, ButtonWrapper } from './Post.styles';
 import { useDate } from '../../../hooks/useDate';
@@ -14,6 +14,7 @@ import Interweave from 'interweave';
 import { renderMetaTags } from 'react-datocms';
 import { Helmet } from 'react-helmet';
 import Comments from '../Comments/Comments';
+import { WindowWidthContext } from '../../../providers/WindowWidthProvider';
 
 function truncate(str: any, n: number) {
   // console.log(str);
@@ -25,35 +26,37 @@ type PostAdditionalType = {
 };
 
 const Post: React.FC<PostType & PostAdditionalType> = ({ id, title, image, _createdAt, content, slug, _seoMetaTags, isFull = false }) => {
+  const { windowWidth } = useContext(WindowWidthContext);
   const date = new Date(_createdAt);
   const {
     dateInPolish: { day, month, year },
   } = useDate(date);
 
   useEffect(() => {
-    console.log(isFull);
-    console.log(_seoMetaTags);
+    console.log(windowWidth);
   }, [_seoMetaTags]);
   const wrapper = useRef<any>(null);
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    if (wrapper) {
-      const elements = wrapper.current;
-      gsap.fromTo(
-        elements,
-        { y: '+=30', opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          // stagger: 1,
-          duration: 1,
-          scrollTrigger: {
-            trigger: wrapper.current,
-            // start: 'top 90%',
-            end: 'bottom 20%',
-          },
-        }
-      );
+    if (windowWidth > 650) {
+      gsap.registerPlugin(ScrollTrigger);
+      if (wrapper) {
+        const elements = wrapper.current;
+        gsap.fromTo(
+          elements,
+          { y: '+=30', opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            // stagger: 1,
+            duration: 1,
+            scrollTrigger: {
+              trigger: wrapper.current,
+              // start: 'top 90%',
+              end: 'bottom 20%',
+            },
+          }
+        );
+      }
     }
   }, []);
 
@@ -85,7 +88,6 @@ const Post: React.FC<PostType & PostAdditionalType> = ({ id, title, image, _crea
           <h2 className="post-info__title">{title}</h2>
         </div>
         <ContentWrapper>
-          {/* <div dangerouslySetInnerHTML={{ __html: render(content, options) }} /> */}
           {!isFull && <Interweave content={truncate(render(content, options), 320)} />}
           <StructuredText
             data={isFull ? content : null}

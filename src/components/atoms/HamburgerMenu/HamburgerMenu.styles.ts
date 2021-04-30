@@ -22,7 +22,6 @@ export const Burger = styled.div<BurgerI>`
   height: 3px;
   background-color: ${({ isOpen, theme }) => (isOpen ? 'transparent' : `${theme.colors.lightBlack}`)};
   border-radius: 5px;
-  /* box-shadow: ${({ isOpen }) => (isOpen ? 'none' : '0 2px 5px rgba(255, 101, 47, 0.2)')}; */
   transition: all 0.3s ease-in-out;
   transform: ${({ isOpen }) => (isOpen ? `translate(-50px)` : null)};
   @media (max-width: 550px) {
@@ -37,7 +36,6 @@ export const Burger = styled.div<BurgerI>`
     height: 3px;
     background-color: ${({ theme }) => theme.colors.lightBlack};
     border-radius: 5px;
-    /* box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2); */
     transition: all 0.3s ease-in-out;
     @media (max-width: 550px) {
       height: 2px;
