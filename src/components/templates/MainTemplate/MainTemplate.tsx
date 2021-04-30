@@ -14,9 +14,13 @@ import { Queries } from '../../../Queries/basicQuery';
 import { renderMetaTags } from 'react-datocms';
 import { Helmet } from 'react-helmet';
 import { useQuery } from '@apollo/client';
+import Pagination from '../../molecules/Pagination/Pagination';
+import { PostsContext } from '../../../providers/PostsProviders';
 
 const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
   const { isOpen } = useContext(NavContext);
+  const { allPosts, numberOfPages } = useContext(PostsContext);
+
   const queries = new Queries();
 
   return (
@@ -42,6 +46,8 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
                     <Search />
                   </Route>
                   {children}
+                  {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null}
+
                   <Aside />
                 </Main>
               </Route>
