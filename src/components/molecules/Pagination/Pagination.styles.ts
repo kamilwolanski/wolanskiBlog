@@ -10,6 +10,7 @@ export const PaginationWrapper = styled.div`
     grid-column: 1/-1;
     display: flex;
     align-items: center;
+    grid-row: 3;
     padding: 40px 0;
   }
 `;
