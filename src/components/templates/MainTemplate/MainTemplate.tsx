@@ -19,7 +19,7 @@ import { PostsContext } from '../../../providers/PostsProviders';
 
 const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
   const { isOpen } = useContext(NavContext);
-  const { allPosts, numberOfPages } = useContext(PostsContext);
+  const { numberOfPages } = useContext(PostsContext);
 
   const queries = new Queries();
 
@@ -47,7 +47,6 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
                   </Route>
                   {children}
                   {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null}
-
                   <Aside />
                 </Main>
               </Route>
