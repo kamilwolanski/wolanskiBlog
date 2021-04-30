@@ -1,10 +1,17 @@
 import React from 'react';
+import { useLocation, useParams } from 'react-router';
 import { MainWrapper } from './Main.styles';
 interface MainI {
   blur: boolean;
 }
 const Main: React.FC<MainI> = ({ blur, children }) => {
-  return <MainWrapper blur={blur}>{children}</MainWrapper>;
+  const { pathname } = useLocation();
+
+  return (
+    <MainWrapper pathName={pathname} blur={blur}>
+      {children}
+    </MainWrapper>
+  );
 };
 
 export default Main;

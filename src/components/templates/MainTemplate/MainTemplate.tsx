@@ -18,17 +18,9 @@ import { useQuery } from '@apollo/client';
 const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
   const { isOpen } = useContext(NavContext);
   const queries = new Queries();
-  // const { data } = useQuery(queries.favicon);
-  // useEffect(() => {
-  //   if (data) {
-  //     console.log(data._site.faviconMetaTags);
-  //   }
-  // }, [data]);
 
   return (
     <WindowWidthProvider>
-      {/* {data && <Helmet>{renderMetaTags(data._site.faviconMetaTags)}</Helmet>} */}
-
       <Wrapper className="xxx">
         <Navigation />
         {isOpen && <div className="overlay" style={{ width: '100%', height: '100vh', position: 'fixed', left: '0', top: '0', zIndex: 1 }}></div>}

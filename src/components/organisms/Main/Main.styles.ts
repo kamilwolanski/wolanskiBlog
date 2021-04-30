@@ -13,7 +13,7 @@ export const MainWrapper = styled.section<Frid>`
   grid-gap: 45px;
   grid-row: 4;
   width: 100%;
-  padding: ${({ pathName }) => (pathName === '/posts' ? '0px 30px' : '80px 30px')};
+  padding: 40px 30px;
   /* padding: 0px 30px; */
   margin: 0 auto;
   max-width: 1250px;
@@ -27,10 +27,7 @@ export const MainWrapper = styled.section<Frid>`
   }
 
   @media (max-width: 550px) {
-    padding: ${({ pathName }) => (pathName === '/posts' ? '0px 30px' : '50px 20px')};
-  }
-
-  @media (max-width: 460px) {
-    padding: ${({ pathName }) => (pathName === '/posts' ? '0px 30px' : '50px 10px')};
+    padding: ${({ pathName }) => (pathName?.includes('/posts/post/') ? '0px' : '40px 8px')};
+    grid-gap: ${({ pathName }) => (pathName?.includes('/posts/post/') ? '0px' : '45px')};
   }
 `;

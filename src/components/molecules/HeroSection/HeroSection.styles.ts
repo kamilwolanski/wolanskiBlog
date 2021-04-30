@@ -34,7 +34,9 @@ export const Wrapper = styled.div<blur>`
   }
 
   @media (max-width: 550px) {
-    height: 200px;
+    height: initial;
+    min-height: 100px;
+    background-image: none;
   }
 
   .welcome-text {
@@ -42,6 +44,7 @@ export const Wrapper = styled.div<blur>`
     flex-direction: column;
     margin-left: 110px;
     color: white;
+    text-transform: uppercase;
 
     @media (max-width: 1100px) {
       margin: 0;
@@ -49,6 +52,9 @@ export const Wrapper = styled.div<blur>`
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+    @media (max-width: 550px) {
+      padding-top: 20px;
     }
   }
 
@@ -58,6 +64,7 @@ export const Wrapper = styled.div<blur>`
     margin-top: 50px;
     font-family: 'Oswald', sans-serif;
     font-size: 80px;
+    text-align: center;
 
     @media (max-width: 1100px) {
       width: 100%;
@@ -69,9 +76,10 @@ export const Wrapper = styled.div<blur>`
     }
     @media (max-width: 550px) {
       font-size: 40px;
+      color: black;
     }
     @media (max-width: 500px) {
-      font-size: 30px;
+      font-size: 35px;
     }
   }
 
@@ -83,6 +91,7 @@ export const Wrapper = styled.div<blur>`
     }
     @media (max-width: 550px) {
       font-size: ${({ theme }: StyledTypes) => theme.fontSize.sm};
+      color: gray;
     }
     @media (max-width: 500px) {
       font-size: ${({ theme }: StyledTypes) => theme.fontSize.s};

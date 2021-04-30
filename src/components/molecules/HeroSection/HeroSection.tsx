@@ -9,7 +9,7 @@ const HeroSection = () => {
     <HeroContainer blur={isOpen ? true : false}>
       <Wrapper blur={isOpen ? true : false}>
         <div className="welcome-text">
-          <h1 style={{ textAlign: 'center', textTransform: 'uppercase', color: 'white' }}>Witaj na moim blogu</h1>
+          <h1>Witaj na moim blogu</h1>
           <h2>Poznaj moje programistyczne projekty</h2>
         </div>
         {/* <SvgWrapper>
