@@ -13,6 +13,7 @@ import { isHeading } from 'datocms-structured-text-utils';
 import Interweave from 'interweave';
 import { renderMetaTags } from 'react-datocms';
 import { Helmet } from 'react-helmet';
+import Comments from '../Comments/Comments';
 
 function truncate(str: any, n: number) {
   // console.log(str);
@@ -69,47 +70,50 @@ const Post: React.FC<PostType & PostAdditionalType> = ({ id, title, image, _crea
   };
 
   return (
-    <Wrapper ref={wrapper}>
-      {isFull && <Helmet>{renderMetaTags(_seoMetaTags)}</Helmet>}
-      <ImageWrapper>
-        <img src={image.url} alt="" />
-      </ImageWrapper>
-      <div className="post-info">
-        <div className="post-info__published-date">
-          <span className="post-info__day">{day} </span>
-          <span className="post-info__month">{month}</span>
-          <span className="post-info__year">{year}</span>
+    <>
+      <Wrapper ref={wrapper}>
+        {isFull && <Helmet>{renderMetaTags(_seoMetaTags)}</Helmet>}
+        <ImageWrapper>
+          <img src={image.url} alt="" />
+        </ImageWrapper>
+        <div className="post-info">
+          <div className="post-info__published-date">
+            <span className="post-info__day">{day} </span>
+            <span className="post-info__month">{month}</span>
+            <span className="post-info__year">{year}</span>
+          </div>
+          <h2 className="post-info__title">{title}</h2>
         </div>
-        <h2 className="post-info__title">{title}</h2>
-      </div>
-      <ContentWrapper>
-        {/* <div dangerouslySetInnerHTML={{ __html: render(content, options) }} /> */}
-        {!isFull && <Interweave content={truncate(render(content, options), 320)} />}
-        <StructuredText
-          data={isFull ? content : null}
-          renderBlock={({ record }) => {
-            if (record.__typename === 'MyblockRecord' && isFull) {
-              return <Image data={(record.image as any).responsiveImage} />;
-            } else {
-              return null;
-            }
-          }}
-        />
-      </ContentWrapper>
-      <ButtonWrapper>
-        {!isFull && (
-          <Link
-            to={{
-              pathname: `/posts/post/${slug}`,
+        <ContentWrapper>
+          {/* <div dangerouslySetInnerHTML={{ __html: render(content, options) }} /> */}
+          {!isFull && <Interweave content={truncate(render(content, options), 320)} />}
+          <StructuredText
+            data={isFull ? content : null}
+            renderBlock={({ record }) => {
+              if (record.__typename === 'MyblockRecord' && isFull) {
+                return <Image data={(record.image as any).responsiveImage} />;
+              } else {
+                return null;
+              }
             }}
-          >
-            <Button>
-              <span>Czytaj dalej</span>
-            </Button>
-          </Link>
-        )}
-      </ButtonWrapper>
-    </Wrapper>
+          />
+        </ContentWrapper>
+        <ButtonWrapper>
+          {!isFull && (
+            <Link
+              to={{
+                pathname: `/posts/post/${slug}`,
+              }}
+            >
+              <Button>
+                <span>Czytaj dalej</span>
+              </Button>
+            </Link>
+          )}
+        </ButtonWrapper>
+      </Wrapper>
+      {isFull && <Comments />}
+    </>
   );
 };
 
