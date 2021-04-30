@@ -37,7 +37,7 @@ export const Burger = styled.div<BurgerI>`
     height: 3px;
     background-color: ${({ theme }) => theme.colors.lightBlack};
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+    /* box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2); */
     transition: all 0.3s ease-in-out;
     @media (max-width: 550px) {
       height: 2px;
