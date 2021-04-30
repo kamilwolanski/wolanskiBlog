@@ -19,7 +19,6 @@ import { PostsContext } from '../../../providers/PostsProviders';
 
 const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
   const { isOpen } = useContext(NavContext);
-  const { numberOfPages } = useContext(PostsContext);
 
   const queries = new Queries();
 
@@ -41,7 +40,6 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
                 <Main blur={isOpen ? true : false}>
                   <Route exact path="/posts">
                     <Search />
-                    {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null}
                   </Route>
                   <Route exact path="/posts/:page">
                     <Search />
