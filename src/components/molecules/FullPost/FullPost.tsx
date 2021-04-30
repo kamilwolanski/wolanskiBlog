@@ -3,6 +3,7 @@ import { useHistory, useParams } from 'react-router';
 import { useSinglePost } from '../../../hooks/useSinglePost';
 import Post from '../../molecules/Post/Post';
 import { Wrapper } from '../../organisms/Posts/Posts.styles';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 const FullPost: React.FC = () => {
   const history = useHistory();
@@ -16,7 +17,24 @@ const FullPost: React.FC = () => {
     }
   }, [history, loading, post?.allPosts?.length]);
 
-  return <Wrapper>{post?.allPosts?.length && !loading && <Post key={post.allPosts[0]?.id} {...post?.allPosts[0]} isFull={true} />}</Wrapper>;
+  return (
+    <Wrapper>
+      {loading && (
+        <div
+          className="loaderWrapper"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+          }}
+        >
+          <ClipLoader loading={loading} size={150} />
+        </div>
+      )}
+      {post?.allPosts?.length && !loading && <Post key={post.allPosts[0]?.id} {...post?.allPosts[0]} isFull={true} />}
+    </Wrapper>
+  );
 };
 
 export default FullPost;
