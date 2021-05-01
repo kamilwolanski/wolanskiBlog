@@ -20,4 +20,8 @@ export const InputStyled = styled.input<InputStyledI>`
   @media (min-width: 1800) {
     font-size: 20px;
   }
+
+  @media (max-width: 820) {
+    width: 100%;
+  }
 `;
