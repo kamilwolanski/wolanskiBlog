@@ -40,24 +40,26 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
             </Switch>
 
             <Main blur={isOpen ? true : false}>
-              <Route exact path="/posts">
-                <Search />
-                {children}
-                <Pagination />
-                <Aside />
-              </Route>
-              <Route exact path="/posts/:page">
-                <Search />
-                {children}
-                <Pagination />
+              <Switch>
+                <Route exact path="/posts">
+                  <Search />
+                  {children}
+                  <Pagination />
+                  <Aside />
+                </Route>
+                <Route exact path="/posts/:page">
+                  <Search />
+                  {children}
+                  <Pagination />
 
-                {/* {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null} */}
-                <Aside />
-              </Route>
-              <Route path="/posts/post/">
-                {children}
-                <Aside />
-              </Route>
+                  {/* {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null} */}
+                  <Aside />
+                </Route>
+                <Route path="/posts/post/">
+                  {children}
+                  <Aside />
+                </Route>
+              </Switch>
             </Main>
           </Route>
           <Route path="/contact">
