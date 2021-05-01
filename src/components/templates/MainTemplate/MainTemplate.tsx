@@ -45,14 +45,12 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
                   <Search />
                   {children}
                   {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null}
-
                   <Aside />
                 </Route>
                 <Route exact path="/posts/:page">
                   <Search />
                   {children}
                   {/* <Pagination /> */}
-
                   {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null}
                   <Aside />
                 </Route>
