@@ -21,7 +21,7 @@ export const InputStyled = styled.input<InputStyledI>`
     font-size: 20px;
   }
 
-  @media (max-width: 820) {
+  @media (max-width: 820px) {
     width: 100%;
   }
 `;
