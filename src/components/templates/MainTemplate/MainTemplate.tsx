@@ -51,7 +51,6 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
                   <Search />
                   {children}
                   <Pagination />
-
                   {/* {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null} */}
                   <Aside />
                 </Route>

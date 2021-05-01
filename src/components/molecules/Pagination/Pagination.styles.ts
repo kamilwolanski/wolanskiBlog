@@ -22,7 +22,7 @@ export const PaginationBtn = styled.button<paginationBtnTypes>`
   margin: 0 4px;
   border-radius: 50%;
   background-color: ${({ disabled, theme }) => (disabled ? theme.colors.lightBlack : '#e2e2e2')};
-  color: ${({ disabled, theme }) => (disabled ? 'white' : theme.colors.lightBlack)};
+  color: ${({ disabled, theme }) => theme.colors.lightBlack};
   width: 30px;
   height: 30px;
   border: none;
