@@ -40,7 +40,7 @@ const Search: React.FC = () => {
             paddinglr={5}
             marginlr={20}
             fontSize={windowWidth >= 1800 ? 20 : 15}
-            width={windowWidth >= 820 ? 30 : 100}
+            width={30}
             borderWeight={2}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
