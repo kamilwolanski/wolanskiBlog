@@ -10,12 +10,12 @@ const FullPost: React.FC = () => {
   let paramId: { id: string } = useParams();
   const { post, loading } = useSinglePost(paramId.id);
 
-  useEffect(() => {
-    if (!post?.allPosts?.length && !loading) {
-      console.log('replcae');
-      history.replace('');
-    }
-  }, [history, loading, post?.allPosts?.length]);
+  // useEffect(() => {
+  //   if (!post?.allPosts?.length && !loading) {
+  //     console.log('replcae');
+  //     history.replace('');
+  //   }
+  // }, [history, loading, post?.allPosts?.length]);
 
   return (
     <Wrapper>

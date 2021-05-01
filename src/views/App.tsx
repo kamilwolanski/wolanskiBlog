@@ -38,7 +38,7 @@ const App = () => {
                   </Route>
                   <Route path="/posts">
                     <Posts />
-                  <Pagination />
+                    <Pagination />
 
                     {/* {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null} */}
                   </Route>
