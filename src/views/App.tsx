@@ -29,7 +29,7 @@ const App = () => {
           <PostsProviders>
             <NavProvider>
               <Route exact path="/">
-                <Redirect to="/posts" />
+                <Redirect to="/posts/" />
               </Route>
               <MainTemplate>
                 <Switch>
