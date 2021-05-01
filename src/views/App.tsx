@@ -37,7 +37,7 @@ const App = () => {
                     <Posts />
                     {/* {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null} */}
                   </Route>
-                  <Route path="/">
+                  <Route exact path="/">
                     <Redirect to="/posts" />
                   </Route>
                 </Switch>
