@@ -31,26 +31,33 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
         <Switch>
           <Route path="/posts">
             <Switch>
-              <Route path="/posts">
-                <Route exact path="/posts">
-                  <HeroSection />
-                </Route>
-                <Route exact path="/posts/:page">
-                  <HeroSection />
-                </Route>
-                <Main blur={isOpen ? true : false}>
-                  <Route exact path="/posts">
-                    <Search />
-                  </Route>
-                  <Route exact path="/posts/:page">
-                    <Search />
-                  </Route>
-                  {children}
-                  {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null}
-                  <Aside />
-                </Main>
+              <Route exact path="/posts/:page/">
+                <HeroSection />
+              </Route>
+              <Route exact path="/posts">
+                <HeroSection />
               </Route>
             </Switch>
+
+            <Main blur={isOpen ? true : false}>
+              <Route exact path="/posts">
+                <Search />
+                {/* <HeroSection /> */}
+                {children}
+                {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null}
+                <Aside />
+              </Route>
+              <Route exact path="/posts/:page">
+                <Search />
+                {children}
+                {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null}
+                <Aside />
+              </Route>
+              <Route path="/posts/post/">
+                {children}
+                <Aside />
+              </Route>
+            </Main>
           </Route>
           <Route path="/contact">
             <Contact />
