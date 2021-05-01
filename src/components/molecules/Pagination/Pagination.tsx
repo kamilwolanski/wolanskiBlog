@@ -18,7 +18,6 @@ const Pagination: React.FC = () => {
           </PaginationBtn>
         );
       })}
-
       <PrevNextBtn onClick={() => setBtnByOne('right')}>{`Prawo`}</PrevNextBtn>
     </PaginationWrapper>
   );
