@@ -40,7 +40,7 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
             </Switch>
 
             <Main blur={isOpen ? true : false}>
-              <Route exact path="/posts">
+              <Route exact path="/posts/">
                 <Search />
                 {children}
                 {/* <Pagination /> */}
