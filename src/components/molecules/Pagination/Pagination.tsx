@@ -10,14 +10,11 @@ const Pagination: React.FC = () => {
   return (
     <PaginationWrapper>
       <PrevNextBtn onClick={() => setBtnByOne('left')}>{`Lewo`}</PrevNextBtn>
-      {paginationArray?.map((item, i) => {
-        console.log(item);
-        return (
-          <PaginationBtn key={i} disabled={item === currentBtn ? true : false} onClick={(e) => handleCurrentBtn(e, i)} value={item}>
-            {item}
-          </PaginationBtn>
-        );
-      })}
+      {paginationArray?.map((item, i) => (
+        <PaginationBtn key={i} disabled={item === currentBtn ? true : false} onClick={(e) => handleCurrentBtn(e, i)} value={item}>
+          {item}
+        </PaginationBtn>
+      ))}
       <PrevNextBtn onClick={() => setBtnByOne('right')}>{`Prawo`}</PrevNextBtn>
     </PaginationWrapper>
   );
