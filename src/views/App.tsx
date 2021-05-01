@@ -38,6 +38,8 @@ const App = () => {
                   </Route>
                   <Route path="/posts">
                     <Posts />
+                  <Pagination />
+
                     {/* {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null} */}
                   </Route>
                 </Switch>
