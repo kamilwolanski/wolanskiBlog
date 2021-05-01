@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../assets/styles/globalStyles';
 import { theme } from '../assets/styles/theme';
@@ -13,7 +13,11 @@ import NavProvider from '../providers/NavProvider';
 import ScrollToTop from '../helpers/ScrollToTop';
 import Pagination from '../components/molecules/Pagination/Pagination';
 const App = () => {
-  const { numberOfPages } = useContext(PostsContext);
+  // const { numberOfPages } = useContext(PostsContext);
+
+  // useEffect(() => {
+  //   console.log(numberOfPages);
+  // }, [numberOfPages]);
 
   return (
     <Router>
@@ -31,7 +35,7 @@ const App = () => {
                   </Route>
                   <Route path="/posts">
                     <Posts />
-                    {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null}
+                    {/* {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null} */}
                   </Route>
                   <Route path="/">
                     <Redirect to="/posts" />
