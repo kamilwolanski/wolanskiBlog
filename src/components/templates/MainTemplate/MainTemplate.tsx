@@ -44,13 +44,13 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
                 <Search />
                 {/* <HeroSection /> */}
                 {children}
-                {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null}
+                {/* {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null} */}
                 <Aside />
               </Route>
               <Route exact path="/posts/:page">
                 <Search />
                 {children}
-                {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null}
+                {/* {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null} */}
                 <Aside />
               </Route>
               <Route path="/posts/post/">
