@@ -14,7 +14,7 @@ export const InputStyled = styled.input<InputStyledI>`
   margin: ${({ margintb = 0, marginlr = 0 }) => `${margintb}px ${marginlr}px`};
   border-radius: 5px;
   border: ${({ borderWeight = 1 }) => `${borderWeight}px`} solid #363636;
-  width: ${({ width = 100 }) => `${width}%`};
+  width: ${({ width }) => `${width}%`};
   font-size: ${({ fontSize = 15 }) => `${fontSize}px`};
 
   @media (min-width: 1800) {
