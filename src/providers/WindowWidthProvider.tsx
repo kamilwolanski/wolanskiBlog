@@ -21,7 +21,7 @@ const WindowWidthProvider: React.FC = ({ children }) => {
   }, []);
 
   const handleWindowWidth = (e: any) => {
-    console.log(e.target.innerWidth);
+    // console.log(e.target.innerWidth);
     setWindowWidth(e.target.innerWidth);
   };
 

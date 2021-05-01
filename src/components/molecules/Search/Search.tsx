@@ -9,6 +9,9 @@ const Search: React.FC = () => {
   const { searchTerm, setSearchTerm, setCurrentBtn, loading, debouncedSearchTerm } = useContext(PostsContext);
   const inputRef = useRef<HTMLInputElement>(null);
   const { windowWidth } = useContext(WindowWidthContext);
+  useEffect(() => {
+    console.log(windowWidth);
+  }, [windowWidth]);
 
   useEffect(() => {
     if ((debouncedSearchTerm || debouncedSearchTerm === '') && searchTerm) {
