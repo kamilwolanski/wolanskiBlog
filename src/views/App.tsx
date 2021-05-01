@@ -28,6 +28,9 @@ const App = () => {
           {/* <Navigation /> */}
           <PostsProviders>
             <NavProvider>
+              <Route exact path="/">
+                <Redirect to="/posts" />
+              </Route>
               <MainTemplate>
                 <Switch>
                   <Route path="/posts/post/:id">
@@ -36,9 +39,6 @@ const App = () => {
                   <Route path="/posts">
                     <Posts />
                     {/* {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null} */}
-                  </Route>
-                  <Route exact path="/">
-                    <Redirect to="/posts" />
                   </Route>
                 </Switch>
               </MainTemplate>
