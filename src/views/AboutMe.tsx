@@ -14,7 +14,7 @@ const AboutMe: React.FC = () => {
           {/* <meta charSet="utf-8" /> */}
           <title>To jest podstrona o mnie</title>
           {/* <link rel="canonical" href="http://mysite.com/example" /> */}
-          <meta name="description" content="Kamil wolanski coś tam coś tam" />
+          <meta name="description" content="Kamil wolanski coś tam coś tam" data-react-helmet="true" />
         </Helmet>
         <AboutMeWrapper>
           <h2>Więcej o mnie</h2>
