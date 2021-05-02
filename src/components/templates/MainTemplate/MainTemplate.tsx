@@ -21,8 +21,6 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
   const { isOpen } = useContext(NavContext);
   const { numberOfPages } = useContext(PostsContext);
 
-  const queries = new Queries();
-
   return (
     <WindowWidthProvider>
       <Wrapper className="xxx">
@@ -50,7 +48,6 @@ const MainTemplate: React.FC = ({ children }: { children?: ReactNode }) => {
                 <Route exact path="/posts/:page">
                   <Search />
                   {children}
-                  {/* <Pagination /> */}
                   {numberOfPages ? numberOfPages.length > 1 && <Pagination /> : null}
                   <Aside />
                 </Route>

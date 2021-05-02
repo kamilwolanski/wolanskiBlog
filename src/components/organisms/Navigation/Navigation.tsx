@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { Nav } from './Navigation.styles';
 import Logo from '../../molecules/Logo/Logo';
 import IconsContainer from '../../molecules/IconsContainer/IconsContainer';
@@ -8,11 +8,8 @@ import NavMenu from '../NavMenu/NavMenu';
 import { NavContext } from '../../../providers/NavProvider';
 
 const Navigation = () => {
-  // const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const { isOpen, setIsOpen } = useContext(NavContext);
-
-  // console.log(isOpen);
 
   useEffect(() => {
     function closeMenu(e: any) {
@@ -29,7 +26,7 @@ const Navigation = () => {
     return () => {
       window.removeEventListener('click', closeMenu, true);
     };
-  }, []);
+  }, [setIsOpen]);
 
   return (
     <Nav ref={navRef} id="confirm">

@@ -1,14 +1,10 @@
-import { gql, useQuery } from '@apollo/client';
-import React, { useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import { useFirstPosts } from '../../../hooks/useFirstPosts';
-import { initialStateModel, PostsContext } from '../../../providers/PostsProviders';
 import RecentPost from '../../molecules/RecentPost/RecentPost';
 import { RecentPostsWrapper } from './RecentPosts.styles';
 
 const RecentPosts: React.FC = () => {
   const { posts } = useFirstPosts(4);
-  console.log(posts?.allPosts);
   return (
     <RecentPostsWrapper>
       <h3 style={{ textAlign: 'center' }}>Ostatnie wpisy</h3>

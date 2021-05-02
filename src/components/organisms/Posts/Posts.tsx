@@ -1,11 +1,10 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext } from 'react';
 import { PostsContext } from '../../../providers/PostsProviders';
-import Pagination from '../../molecules/Pagination/Pagination';
 import Post from '../../molecules/Post/Post';
 import { Wrapper } from './Posts.styles';
 
 const Posts: React.FC = () => {
-  const { allPosts, numberOfPages } = useContext(PostsContext);
+  const { allPosts } = useContext(PostsContext);
 
   return (
     <Wrapper>

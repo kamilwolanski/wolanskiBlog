@@ -21,7 +21,4 @@ export const SearchWrapper = styled.div`
       text-align: center;
     }
   }
-  /* justify-content: space-around; */
-  /* max-width: 1250px; */
-  /* padding: 35px 30px; */
 `;

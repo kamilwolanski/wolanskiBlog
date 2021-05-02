@@ -13,12 +13,8 @@ export const usePosts = (postsOnPage: number, searchValue: string) => {
   const setInitialCurrentBtn = useCallback(() => {
     const lastChar = location.pathname.substr(location.pathname.length - 1);
     if (location.pathname !== `/posts` && !isNaN(Number(lastChar))) {
-      console.log('przeszło');
-      // console.log(lastChar);
-      // console.log(isNaN(Number(lastChar)));
       return Number(lastChar);
     } else {
-      console.log('ustawia na 1');
       return 1;
     }
   }, [location.pathname]);
@@ -47,7 +43,6 @@ export const usePosts = (postsOnPage: number, searchValue: string) => {
   }, [currentBtn, postsOnPage]);
 
   useEffect(() => {
-    // console.log(history.location.pathname);
     if (!history.location.pathname.includes('posts/post') && history.location.pathname.includes('posts')) {
       history.push(currentBtn > 1 ? `/posts/${currentBtn}` : '/posts');
     }
@@ -61,7 +56,6 @@ export const usePosts = (postsOnPage: number, searchValue: string) => {
 
   useEffect(() => {
     if (posts && currentBtn > numberOfPages.length) {
-      console.log('nowy ustawil na 1');
       setCurrentBtn(1);
     }
   }, [currentBtn, numberOfPages.length]);

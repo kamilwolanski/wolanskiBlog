@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { SearchWrapper } from './Search.styles';
 import { GoSearch } from 'react-icons/go';
 import { PostsContext } from '../../../providers/PostsProviders';
@@ -9,9 +9,6 @@ const Search: React.FC = () => {
   const { searchTerm, setSearchTerm, setCurrentBtn, loading, debouncedSearchTerm } = useContext(PostsContext);
   const inputRef = useRef<HTMLInputElement>(null);
   const { windowWidth } = useContext(WindowWidthContext);
-  useEffect(() => {
-    console.log(windowWidth);
-  }, [windowWidth]);
 
   useEffect(() => {
     if ((debouncedSearchTerm || debouncedSearchTerm === '') && searchTerm) {
@@ -19,7 +16,7 @@ const Search: React.FC = () => {
     } else {
       return;
     }
-  }, [debouncedSearchTerm]);
+  }, [debouncedSearchTerm, searchTerm, setCurrentBtn]);
 
   const handleFocus = () => {
     if (inputRef.current) {

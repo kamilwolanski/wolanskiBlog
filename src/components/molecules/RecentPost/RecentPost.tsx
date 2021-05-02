@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useDate } from '../../../hooks/useDate';
 import { PostType } from '../../../providers/PostsProviders';
 import { RecentPostWrapper } from './RecentPost.styles';
@@ -11,10 +11,11 @@ const RecentPost: React.FC<PostType> = ({ title, _createdAt, slug }) => {
     dateInPolish: { day, month, year },
   } = useDate(date);
   return (
-    <Link
+    <NavLink
       to={{
         pathname: `/posts/post/${slug}`,
       }}
+      activeClassName="activePost"
     >
       <RecentPostWrapper>
         <p className="recentPost-title">{title}</p>
@@ -25,7 +26,7 @@ const RecentPost: React.FC<PostType> = ({ title, _createdAt, slug }) => {
           {`${day} ${month} ${year}`}
         </p>
       </RecentPostWrapper>
-    </Link>
+    </NavLink>
   );
 };
 

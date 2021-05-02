@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { StyledTypes } from '../../../assets/styles/theme';
 export const RecentPostWrapper = styled.li`
-  margin: 8px 0;
-  padding: 5px;
+  padding: 10px 15px;
   border-radius: 5px;
   list-style: none;
 

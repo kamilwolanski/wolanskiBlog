@@ -1,5 +1,4 @@
-import { EventType } from '@testing-library/dom';
-import React, { ChangeEvent, Dispatch, SetStateAction, useEffect, useLayoutEffect, useState } from 'react';
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 
 export interface initialStateModel {
   windowWidth: number;
@@ -21,7 +20,6 @@ const WindowWidthProvider: React.FC = ({ children }) => {
   }, []);
 
   const handleWindowWidth = (e: any) => {
-    // console.log(e.target.innerWidth);
     setWindowWidth(e.target.innerWidth);
   };
 

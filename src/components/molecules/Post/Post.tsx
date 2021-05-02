@@ -4,8 +4,7 @@ import { Wrapper, ImageWrapper, ContentWrapper, ButtonWrapper } from './Post.sty
 import { useDate } from '../../../hooks/useDate';
 import Button from '../../atoms/Button/Button';
 import { Link } from 'react-router-dom';
-import { StructuredText, Image, ResponsiveImageType } from 'react-datocms';
-// import { render } from 'datocms-structured-text-to-plain-text';
+import { StructuredText, Image } from 'react-datocms';
 import { render, renderRule } from 'datocms-structured-text-to-html-string';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -17,7 +16,6 @@ import Comments from '../Comments/Comments';
 import { WindowWidthContext } from '../../../providers/WindowWidthProvider';
 
 function truncate(str: any, n: number) {
-  // console.log(str);
   return str.length > n ? `${str.substr(0, n - 1)}...` : str;
 }
 
@@ -43,9 +41,6 @@ const Post: React.FC<PostType & PostAdditionalType> = ({
     dateInPolish: { day, month, year },
   } = useDate(date);
 
-  useEffect(() => {
-    console.log(windowWidth);
-  }, [_seoMetaTags]);
   const wrapper = useRef<any>(null);
   useEffect(() => {
     if (windowWidth > 650) {
@@ -58,11 +53,9 @@ const Post: React.FC<PostType & PostAdditionalType> = ({
           {
             y: 0,
             opacity: 1,
-            // stagger: 1,
             duration: 1,
             scrollTrigger: {
               trigger: wrapper.current,
-              // start: 'top 90%',
               end: 'bottom 20%',
             },
           }

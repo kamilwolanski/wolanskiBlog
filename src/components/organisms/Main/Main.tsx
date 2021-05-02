@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation, useParams } from 'react-router';
+import { useLocation } from 'react-router';
 import { MainWrapper } from './Main.styles';
 interface MainI {
   blur: boolean;
