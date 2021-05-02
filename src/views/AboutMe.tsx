@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AboutMeWrapper } from './AboutMe.styles';
 import Main from '../components/organisms/Main/Main';
 import { NavContext } from '../providers/NavProvider';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 const AboutMe: React.FC = () => {
   const { isOpen } = useContext(NavContext);

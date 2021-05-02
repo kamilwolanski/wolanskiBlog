@@ -11,7 +11,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { isHeading } from 'datocms-structured-text-utils';
 import Interweave from 'interweave';
 import { renderMetaTags } from 'react-datocms';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import Comments from '../Comments/Comments';
 import { WindowWidthContext } from '../../../providers/WindowWidthProvider';
 
