@@ -1,3 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+http://www.google.com/ping?sitemap=https://pensive-williams-489946.netlify.app/
