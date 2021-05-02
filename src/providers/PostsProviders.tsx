@@ -1,8 +1,7 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { usePosts } from '../hooks/usePosts';
 import { useDebounce } from '../hooks/useDebounce';
-import { StructuredText } from 'datocms-structured-text-utils';
-import { SeoMetaTagType, StructuredTextDocument } from 'react-datocms';
+import { SeoMetaTagType } from 'react-datocms';
 
 const articlesOnAPage = 3;
 
@@ -56,9 +55,7 @@ const PostsProviders: React.FC = ({ children }) => {
     articlesOnAPage,
     debouncedSearchTerm
   );
-  useEffect(() => {
-    console.log(posts);
-  }, [posts]);
+
   return (
     <PostsContext.Provider
       value={{

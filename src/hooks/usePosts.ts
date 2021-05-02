@@ -1,11 +1,10 @@
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { useEffect, useState } from 'react';
-import { useHistory, useLocation, useParams } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
 import { PostsResponseI } from '../providers/PostsProviders';
 import { useCallback } from 'react';
 import { Queries } from '../Queries/basicQuery';
 import { usePagination } from './usePagination';
-import useMeta from './useMeta';
 
 export const usePosts = (postsOnPage: number, searchValue: string) => {
   let location = useLocation();
@@ -32,12 +31,7 @@ export const usePosts = (postsOnPage: number, searchValue: string) => {
     currentBtn,
     setCurrentBtn
   );
-  const { data } = useMeta();
-  useEffect(() => {
-    if (data) {
-      console.log(data.allPosts);
-    }
-  }, [data]);
+
   useEffect(() => {
     setSkipNumber((currentBtn - 1) * postsOnPage);
   }, [currentBtn, postsOnPage]);
