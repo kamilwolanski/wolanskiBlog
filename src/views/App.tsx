@@ -11,11 +11,15 @@ import { apolloClient } from '../api/apolloClient';
 import FullPost from '../components/molecules/FullPost/FullPost';
 import NavProvider from '../providers/NavProvider';
 import ScrollToTop from '../helpers/ScrollToTop';
-import { HelmetProvider } from 'react-helmet-async';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const App = () => {
   return (
     <HelmetProvider>
+      <Helmet>
+        <title>Witaj u nas</title>
+        <meta name="description" content="zxczxc" />
+      </Helmet>
       <Router>
         <ApolloProvider client={apolloClient}>
           <ThemeProvider theme={theme}>
