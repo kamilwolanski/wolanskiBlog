@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { PostsContext } from '../../../providers/PostsProviders';
 import Post from '../../molecules/Post/Post';
 import { Wrapper } from './Posts.styles';
@@ -8,6 +9,10 @@ const Posts: React.FC = () => {
 
   return (
     <Wrapper>
+      <Helmet>
+        <title>Witaj na stronie glownej</title>
+        <meta name="description" content="blablabla" />
+      </Helmet>
       {allPosts?.map((post) => (
         <Post key={post.id} {...post} />
       ))}
