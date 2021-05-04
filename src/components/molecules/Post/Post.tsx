@@ -10,8 +10,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { isHeading } from 'datocms-structured-text-utils';
 import Interweave from 'interweave';
-import { renderMetaTags } from 'react-datocms';
-import { Helmet } from 'react-helmet';
 import Comments from '../Comments/Comments';
 import { WindowWidthContext } from '../../../providers/WindowWidthProvider';
 
@@ -79,7 +77,6 @@ const Post: React.FC<PostType & PostAdditionalType> = ({
   return (
     <>
       <Wrapper ref={wrapper}>
-        {isFull && <Helmet>{renderMetaTags(_seoMetaTags)}</Helmet>}
         <ImageWrapper>
           <img src={image.url} alt="" />
         </ImageWrapper>

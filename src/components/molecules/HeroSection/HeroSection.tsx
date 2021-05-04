@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
-import { Wrapper, SvgWrapper, HeroContainer } from './HeroSection.styles';
-import img from '../../../assets/images/undraw_working_blue.svg';
+import { Wrapper, HeroContainer } from './HeroSection.styles';
 import { NavContext } from '../../../providers/NavProvider';
 const HeroSection = () => {
   const { isOpen } = useContext(NavContext);
@@ -12,9 +11,6 @@ const HeroSection = () => {
           <h1>Witaj na moim blogu</h1>
           <h2>Poznaj moje programistyczne projekty</h2>
         </div>
-        {/* <SvgWrapper>
-          <img src={img} alt="" />
-        </SvgWrapper> */}
       </Wrapper>
     </HeroContainer>
   );

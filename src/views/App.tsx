@@ -11,7 +11,6 @@ import { apolloClient } from '../api/apolloClient';
 import FullPost from '../components/molecules/FullPost/FullPost';
 import NavProvider from '../providers/NavProvider';
 import ScrollToTop from '../helpers/ScrollToTop';
-// import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const App = () => {
   return (

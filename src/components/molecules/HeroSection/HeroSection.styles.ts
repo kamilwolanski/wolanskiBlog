@@ -9,7 +9,6 @@ export const HeroContainer = styled.section<blur>`
   grid-row: 2;
   grid-column: 1/-1;
   overflow: hidden;
-  /* filter: ${({ blur }) => (blur ? `blur(5px)` : `blur(0px)`)}; */
 `;
 
 export const Wrapper = styled.div<blur>`

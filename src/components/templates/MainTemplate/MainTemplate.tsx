@@ -10,10 +10,6 @@ import AboutMe from '../../../views/AboutMe';
 import Main from '../../organisms/Main/Main';
 import Search from '../../molecules/Search/Search';
 import WindowWidthProvider from '../../../providers/WindowWidthProvider';
-import { Queries } from '../../../Queries/basicQuery';
-import { renderMetaTags } from 'react-datocms';
-import { Helmet } from 'react-helmet';
-import { useQuery } from '@apollo/client';
 import Pagination from '../../molecules/Pagination/Pagination';
 import { PostsContext } from '../../../providers/PostsProviders';
 
