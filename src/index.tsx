@@ -10,7 +10,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-
 // const rootElement: any = document.getElementById('root');
 // if (rootElement.hasChildNodes()) {
 //   hydrate(<App />, rootElement);
