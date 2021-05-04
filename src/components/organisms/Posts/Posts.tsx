@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 import { PostsContext } from '../../../providers/PostsProviders';
 import Post from '../../molecules/Post/Post';
 import { Wrapper } from './Posts.styles';
