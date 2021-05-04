@@ -15,33 +15,31 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const App = () => {
   return (
-    <HelmetProvider>
-      <Router>
-        <ApolloProvider client={apolloClient}>
-          <ThemeProvider theme={theme}>
-            <GlobalStyle />
-            <ScrollToTop />
-            <PostsProviders>
-              <NavProvider>
-                <Route exact path="/">
-                  <Redirect to="/posts/" />
-                </Route>
-                <MainTemplate>
-                  <Switch>
-                    <Route path="/posts/post/:id">
-                      <FullPost />
-                    </Route>
-                    <Route path="/posts">
-                      <Posts />
-                    </Route>
-                  </Switch>
-                </MainTemplate>
-              </NavProvider>
-            </PostsProviders>
-          </ThemeProvider>
-        </ApolloProvider>
-      </Router>
-    </HelmetProvider>
+    <Router>
+      <ApolloProvider client={apolloClient}>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <ScrollToTop />
+          <PostsProviders>
+            <NavProvider>
+              <Route exact path="/">
+                <Redirect to="/posts/" />
+              </Route>
+              <MainTemplate>
+                <Switch>
+                  <Route path="/posts/post/:id">
+                    <FullPost />
+                  </Route>
+                  <Route path="/posts">
+                    <Posts />
+                  </Route>
+                </Switch>
+              </MainTemplate>
+            </NavProvider>
+          </PostsProviders>
+        </ThemeProvider>
+      </ApolloProvider>
+    </Router>
   );
 };
 
