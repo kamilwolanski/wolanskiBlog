@@ -12,7 +12,7 @@ const AboutMe: React.FC = () => {
       <Main blur={isOpen ? true : false}>
         <Helmet>
           <title>To jest podstrona o mnie</title>
-          <meta name="description" content="Kamil wolanski coś tam coś tam" data-react-helmet="true" />
+          <meta name="description" content="Kamil wolanski coś tam coś tam" />
         </Helmet>
         <AboutMeWrapper>
           <h2>Więcej o mnie</h2>
