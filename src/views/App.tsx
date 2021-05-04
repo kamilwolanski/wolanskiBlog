@@ -16,10 +16,6 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 const App = () => {
   return (
     <HelmetProvider>
-      <Helmet>
-        <title>Witaj u nas</title>
-        <meta name="description" content="zxczxc" />
-      </Helmet>
       <Router>
         <ApolloProvider client={apolloClient}>
           <ThemeProvider theme={theme}>
