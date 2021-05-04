@@ -4,12 +4,10 @@ import App from './views/App';
 import { hydrate, render } from 'react-dom';
 
 ReactDOM.hydrate(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />,
+
   document.getElementById('root')
 );
-
 
 // const rootElement: any = document.getElementById('root');
 // if (rootElement.hasChildNodes()) {
