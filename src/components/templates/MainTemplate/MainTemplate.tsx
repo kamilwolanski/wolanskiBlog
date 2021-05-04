@@ -1,4 +1,4 @@
-import React, { ReactNode, useContext, useEffect } from 'react';
+import React, { ReactNode, useContext } from 'react';
 import { Wrapper, Footer } from './MainTemplate.styles';
 import Navigation from '../../organisms/Navigation/Navigation';
 import HeroSection from '../../molecules/HeroSection/HeroSection';

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import Icon from '../../atoms/Icon/Icon';
 import { AiFillGithub } from 'react-icons/ai';
-import { BiCodeAlt } from 'react-icons/bi';
 import { Wrapper } from './IconsContainer.styles';
 import { WindowWidthContext } from '../../../providers/WindowWidthProvider';
 const IconsContainer = () => {
@@ -13,10 +12,6 @@ const IconsContainer = () => {
           <AiFillGithub />
         </Icon>
       </a>
-
-      <Icon iconSize={windowWidth <= 550 ? 19 : 23}>
-        <BiCodeAlt />
-      </Icon>
     </Wrapper>
   );
 };

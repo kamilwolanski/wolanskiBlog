@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import React, { Dispatch, SetStateAction, useState } from 'react';
 import { usePosts } from '../hooks/usePosts';
 import { useDebounce } from '../hooks/useDebounce';
 import { SeoMetaTagType } from 'react-datocms';

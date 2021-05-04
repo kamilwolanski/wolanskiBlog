@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router';
 import { PostsResponseI } from '../providers/PostsProviders';
 import { useCallback } from 'react';
-import { Queries } from '../Queries/basicQuery';
+import { Queries } from '../Queries/postsQueries';
 import { usePagination } from './usePagination';
 
 export const usePosts = (postsOnPage: number, searchValue: string) => {
@@ -20,7 +20,7 @@ export const usePosts = (postsOnPage: number, searchValue: string) => {
   const [skipNumber, setSkipNumber] = useState(0);
   const [numberOfPages, setNumberOfPages] = useState<(string | number)[]>([]);
   const queries = new Queries(postsOnPage, skipNumber, searchValue);
-  const { loading, error, data: posts } = useQuery<PostsResponseI>(searchValue ? queries.queryFiltered : queries.query1);
+  const { loading, data: posts } = useQuery<PostsResponseI>(searchValue ? queries.queryFiltered : queries.query1);
   const [currentBtn, setCurrentBtn] = useState<number>(setInitialCurrentBtn());
   const { handleCurrentBtn, setBtnByOne, arrOfCurrButtons } = usePagination(
     posts,

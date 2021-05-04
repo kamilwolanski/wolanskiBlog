@@ -29,7 +29,7 @@ const Navigation = () => {
   }, [setIsOpen]);
 
   return (
-    <Nav ref={navRef} id="confirm">
+    <Nav ref={navRef}>
       <IconsContainer />
       <Link to="/posts" onClick={() => setIsOpen(false)}>
         <Logo />

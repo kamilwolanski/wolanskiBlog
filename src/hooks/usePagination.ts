@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import handleNumbersOfButton from '../helpers/handleNumbersOfButton';
-import { PostsResponseI, PostType } from '../providers/PostsProviders';
+import { PostsResponseI } from '../providers/PostsProviders';
 
 export const LEFT = 'left';
 export const RIGHT = 'right';

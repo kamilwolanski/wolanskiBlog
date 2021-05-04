@@ -1,5 +1,4 @@
 import { useQuery, gql } from '@apollo/client';
-
 import { PostsResponseI } from '../providers/PostsProviders';
 
 export const useSinglePost = (slug: string) => {
@@ -41,6 +40,7 @@ export const useSinglePost = (slug: string) => {
       }
     }
   `;
+
   const { loading, error, data: post } = useQuery<PostsResponseI>(query);
 
   return { post, loading, error };
