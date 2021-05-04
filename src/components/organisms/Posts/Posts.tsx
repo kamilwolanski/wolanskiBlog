@@ -9,10 +9,6 @@ const Posts: React.FC = () => {
 
   return (
     <Wrapper>
-      <Helmet>
-        <title>Witaj na stronie glownej</title>
-        <meta name="description" content="blablabla" />
-      </Helmet>
       {allPosts?.map((post) => (
         <Post key={post.id} {...post} />
       ))}
