@@ -14,7 +14,6 @@ export const MainWrapper = styled.section<Frid>`
   grid-row: 4;
   width: 100%;
   padding: 40px 30px;
-  /* padding: 0px 30px; */
   margin: 0 auto;
   max-width: 1250px;
   filter: ${({ blur }) => (blur ? `blur(5px)` : `blur(0px)`)};
