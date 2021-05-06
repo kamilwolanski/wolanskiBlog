@@ -5,7 +5,7 @@ import { PostsResponseI } from '../providers/PostsProviders';
 export const useFirstPosts = (numberOfPosts: number) => {
   const query = gql`
     {
-      allPosts(first: "${numberOfPosts}") {
+      allPosts(orderBy: [createdAt_DESC], first: "${numberOfPosts}") {
         id
         title
         slug
