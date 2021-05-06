@@ -62,10 +62,28 @@ export const Wrapper = styled.div<StyledTypes>`
         font-size: ${({ theme }) => theme.fontSize.xl};
       }
     }
-    h2 {
+    &__title {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
+      text-align: center;
+      font-size: ${({ theme }) => theme.fontSize.xl};
+      font-family: 'Oswald', sans-serif;
+
+      @media (min-width: 1800px) {
+        font-size: ${({ theme }) => theme.fontSize.xxl};
+      }
+
+      @media (max-width: 650px) {
+        font-size: ${({ theme }) => theme.fontSize.l};
+      }
+    }
+    a {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &__title-notFull {
       text-align: center;
       font-size: ${({ theme }) => theme.fontSize.xl};
       font-family: 'Oswald', sans-serif;

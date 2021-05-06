@@ -86,7 +86,13 @@ const Post: React.FC<PostType & PostAdditionalType> = ({
             <span className="post-info__month">{month}</span>
             <span className="post-info__year">{year}</span>
           </div>
-          <h2 className="post-info__title">{title}</h2>
+          {!isFull ? (
+            <Link to={`/posts/post/${slug}`}>
+              <h2 className="post-info__title-notFull">{title}</h2>
+            </Link>
+          ) : (
+            <h2 className="post-info__title">{title}</h2>
+          )}
         </div>
         <ContentWrapper>
           {!isFull && <Interweave content={truncate(render(content, options), 320)} />}
