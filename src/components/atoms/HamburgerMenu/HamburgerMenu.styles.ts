@@ -4,7 +4,7 @@ export const StyledHamburgerMenu = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
+  /* width: 80px; */
   height: 80px;
   background-color: transparent;
   cursor: pointer;

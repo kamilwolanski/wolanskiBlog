@@ -39,6 +39,7 @@ const AboutMe: React.FC = () => {
             <li>StyledComponents</li>
             <li>BEM</li>
             <li>RWD</li>
+            <li>Podstawy GraphQL</li>
           </ul>
           <h2>Czemu blog?</h2>
           <p>
