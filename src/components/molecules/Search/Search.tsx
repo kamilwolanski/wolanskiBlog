@@ -4,6 +4,8 @@ import { GoSearch } from 'react-icons/go';
 import { PostsContext } from '../../../providers/PostsProviders';
 import { InputStyled } from '../../atoms/Input/Input.styles';
 import { WindowWidthContext } from '../../../providers/WindowWidthProvider';
+import { ClipLoader } from 'react-spinners';
+import { LoaderWrapper } from '../FullPost/FullPost.styles';
 
 const Search: React.FC = () => {
   const { searchTerm, setSearchTerm, setCurrentBtn, loading, debouncedSearchTerm } = useContext(PostsContext);
@@ -43,7 +45,6 @@ const Search: React.FC = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-        {loading && <p>...loading</p>}
       </SearchWrapper>
     </>
   );

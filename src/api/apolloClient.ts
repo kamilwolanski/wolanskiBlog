@@ -4,7 +4,6 @@ import { setContext } from '@apollo/client/link/context';
 const httpLink = createHttpLink({
   uri: 'https://graphql.datocms.com',
 });
-console.log(process.env.REACT_APP_DATO_TOKEN);
 
 const authLink = setContext((_, { headers }) => {
   return {

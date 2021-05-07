@@ -4,10 +4,11 @@ export const SearchWrapper = styled.div`
   grid-row: 1;
   grid-column: 1/-1;
   font-size: 23px;
-  display: flex;
+  position: relative;
+  /* display: flex;
   flex-direction: column-reverse;
   justify-content: center;
-  justify-items: center;
+  justify-items: center; */
 
   .search {
     display: flex;
