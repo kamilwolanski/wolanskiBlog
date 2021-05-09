@@ -40,7 +40,7 @@ export const AboutAuthorWrapper = styled.div`
     img {
       width: 100%;
       height: 100%;
-      object-position: 0px -65px;
+      object-position: 0px -30px;
       object-fit: cover;
     }
   }
