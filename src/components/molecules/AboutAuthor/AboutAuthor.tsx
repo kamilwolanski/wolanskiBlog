@@ -1,5 +1,5 @@
 import { AboutAuthorWrapper } from './AboutAuthor.styles';
-import authorImg from '../../../assets/images/male.jpg';
+import authorImg from '../../../assets/images/IMG_20210509_113454.jpg';
 import Button from '../../atoms/Button/Button';
 import { FontSizesButton } from '../../atoms/Button/Button';
 import React, { useContext } from 'react';
