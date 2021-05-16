@@ -21,6 +21,9 @@ const App = () => {
           <ScrollToTop />
           <PostsProviders>
             <NavProvider>
+              <Route exact path="/">
+                <Redirect to="/posts/" />
+              </Route>
               <MainTemplate>
                 <Switch>
                   <Route path="/posts/post/:id">
