@@ -1,7 +1,7 @@
 {
   "name": "blog",
   "version": "0.1.0",
-  "homepage": "/posts",
+  "homepage": "https://wolanskiblog.pl/posts",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.3.13",
